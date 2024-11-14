@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { AnimatePresence, easeInOut, easeOut, motion } from "framer-motion";
 import poke_list from "../../Data/Poke";
+import Selection from "../Selection/Selection";
 
 const slideIn = (delay) => {
   return {
@@ -107,6 +108,7 @@ const Hero = () => {
         </div>
         <div className="w-full h-0.5 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 "></div>
       </section>
+      <Selection pokemons={activePoke} onSelect={handleActivePoke} />
     </div>
   );
 };
