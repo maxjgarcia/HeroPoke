@@ -1,7 +1,7 @@
-import { useState } from "react";
+// import { useState } from "react";
 import { AnimatePresence, easeInOut, easeOut, motion } from "framer-motion";
 import poke_list from "../../Data/Poke";
-import Selection from "../Selection/Selection";
+import { usePokemon } from "../../context/Poke-Context";
 
 const slideIn = (delay) => {
   return {
@@ -22,11 +22,7 @@ const slideIn = (delay) => {
 };
 
 const Hero = () => {
-  const [activePoke, setActivePoke] = useState(poke_list[0]);
-
-  const handleActivePoke = (data) => {
-    setActivePoke(data);
-  };
+  const { activePoke, handleActivePoke, setIsModalOpen } = usePokemon();
 
   return (
     <div>
@@ -72,7 +68,10 @@ const Hero = () => {
                   {activePoke.type}
                 </p>
               </span>
-              <button className="px-8 py-4 inline-block font-bold rounded-full bg-black text-white border border-black hover:scale-105 transition-all duration-300 hover:bg-white/70 hover:text-black hover:border hover:border-black/30">
+              <button
+                onClick={() => setIsModalOpen(true)}
+                className="px-8 py-4 inline-block font-bold rounded-full bg-black text-white border border-black hover:scale-105 transition-all duration-300 hover:bg-white/70 hover:text-black hover:border hover:border-black/30"
+              >
                 Choose {activePoke.name}
               </button>
 
@@ -108,7 +107,6 @@ const Hero = () => {
         </div>
         <div className="w-full h-0.5 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 "></div>
       </section>
-      <Selection pokemons={activePoke} onSelect={handleActivePoke} />
     </div>
   );
 };
