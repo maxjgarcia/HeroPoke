@@ -1,7 +1,7 @@
-// import { useState } from "react";
 import { AnimatePresence, easeInOut, easeOut, motion } from "framer-motion";
 import poke_list from "../../Data/Poke";
 import { usePokemon } from "../../context/Poke-Context";
+import confetti from "canvas-confetti";
 
 const slideIn = (delay) => {
   return {
@@ -27,7 +27,6 @@ const Hero = () => {
   return (
     <div>
       <section style={{ backgroundColor: activePoke.bgColor }}>
-        <div className="w-full h-0.5 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 "></div>
         <div className="container grid grid-cols-1 min-h-[700px] md:grid-cols-2">
           <div className="flex flex-col items-center justify-center order-first md:order-last py-4">
             <motion.img
@@ -69,7 +68,14 @@ const Hero = () => {
                 </p>
               </span>
               <button
-                onClick={() => setIsModalOpen(true)}
+                onClick={() => {
+                  setIsModalOpen(true);
+                  confetti({
+                    spread: 700,
+                    particleCount: 150,
+                    ticks: 60,
+                  });
+                }}
                 className="px-8 py-4 inline-block font-bold rounded-full bg-black text-white border border-black hover:scale-105 transition-all duration-300 hover:bg-white/70 hover:text-black hover:border hover:border-black/30"
               >
                 Choose {activePoke.name}

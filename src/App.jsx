@@ -1,24 +1,23 @@
-import { div } from "framer-motion/client";
+import PokeDisplay from "./Components/Content/PokeDisplay";
+import {
+  Route,
+  createBrowserRouter,
+  createRoutesFromElements,
+  RouterProvider,
+} from "react-router-dom";
 
-import Hero from "./Components/Hero/Hero";
-import Navbar from "./Components/Navbar/Navbar";
-import Content from "./Components/Content/Content";
-import Footer from "./Components/Footer/Footer";
-import Selection from "./Components/Selection/Selection";
-import { PokemonProvider } from "./context/Poke-Context";
+import { MainLayout, Home } from "./Components/Layouts/MainLayout";
 
 const App = () => {
-  return (
-    <>
-      <Navbar />
-      <PokemonProvider>
-        <Hero />
-        <Selection />
-      </PokemonProvider>
-      <Content />
-      <Footer />
-    </>
+  const router = createBrowserRouter(
+    createRoutesFromElements(
+      <Route path="/" element={<MainLayout />}>
+        <Route index element={<Home />} />
+        <Route path="/pokemons" element={<PokeDisplay />} />
+      </Route>
+    )
   );
+  return <RouterProvider router={router} />;
 };
 
 export default App;
