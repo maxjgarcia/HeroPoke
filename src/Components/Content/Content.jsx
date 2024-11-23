@@ -11,7 +11,7 @@ const Content = () => {
             alt="Image of first pokemon selection"
             className="py-4   w-[500px]  xl:w-[700px]"
           />
-          <p className="text-justify text-white py-4 leading-loose">
+          <p className="text-center text-white py-4 leading-loose">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius
             molestias reprehenderit nisi accusantium mollitia, quis quo soluta
             recusandae porro error, ullam impedit sint facere nihil. Obcaecati
@@ -55,7 +55,7 @@ const Content = () => {
             alt="Profesor Oak holding a pokeball"
             className="py-4 object-contain  w-[500px]  xl:w-[700px]"
           />
-          <p className="text-justify text-white py-4 leading-loose">
+          <p className="text-center text-white py-4 leading-loose">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius
             molestias reprehenderit nisi accusantium mollitia, quis quo soluta
             recusandae porro error, ullam impedit sint facere nihil. Obcaecati

@@ -16,8 +16,8 @@ const Filters = ({ onSearch, onTypeSelect, types }) => {
 
   return (
     <>
-      <div className="flex items-center justify-center bg-black">
-        <div className="flex w-full mx-7 mt-7 lg:max-w-[500px] rounded-full text-black bg-slate-200 px-2">
+      <div className="flex items-center justify-center  bg-transparent">
+        <div className="flex w-full mx-7 lg:max-w-[500px] rounded-full text-black bg-slate-200 px-2 border-2 border-white/70">
           <input
             type="text"
             value={searchTerm}
