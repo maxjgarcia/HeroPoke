@@ -20,3 +20,5 @@ export { default as SGif } from './squigif.gif'
 export { default as BGif } from './bulbgif.gif'
 export { default as CGif } from './chargif.gif'
 
+export { default as Pokedex } from './pokedex1.png'
+

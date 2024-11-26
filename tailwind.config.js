@@ -17,6 +17,19 @@ export default {
       },
     },
   },
-  plugins: [animations],
+  plugins: [animations,
+    function ({ addUtilities }) {
+      addUtilities({
+        '.border-gradient': {
+          'border-width': '7px',
+          'border-image': 'linear-gradient(to right, #6366f1, #a855f7, #ec4899) 1',
+          'border-radius': '20px',
+        },
+        '.hover\\:border-gradient:hover': {
+          'border-image': 'linear-gradient(to right, #6366f1, #a855f7, #ec4899) 1',
+          'border-radius': '20px',
+        },
+      })
+    },],
 }
 

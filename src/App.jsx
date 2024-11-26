@@ -1,4 +1,5 @@
-import PokeDisplay from "./Components/Content/PokeDisplay";
+import PokeDisplay from "./Components/Content/Pokemon-Display/PokeDisplay";
+import Pokedex from "./Components/Content/Pokedex/Pokedex";
 import {
   Route,
   createBrowserRouter,
@@ -14,6 +15,7 @@ const App = () => {
       <Route path="/" element={<MainLayout />}>
         <Route index element={<Home />} />
         <Route path="/pokemons" element={<PokeDisplay />} />
+        <Route path="/pokedex" element={<Pokedex />} />
       </Route>
     )
   );

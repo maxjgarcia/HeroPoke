@@ -1,4 +1,4 @@
-import { typeColors } from "../../Data/CardColors.js";
+import { typeColors } from "../../../Data/CardColors";
 
 const PokeCards = ({ pokemon }) => {
   const primaryType = pokemon.type[0];
