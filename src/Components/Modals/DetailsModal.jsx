@@ -30,7 +30,7 @@ const DetailsModal = ({ onClose, pokemonDetails, isOpen }) => {
             </ul>
           </div>
         </div>
-        <button className="hover:animate-pulse" onClick={onClose}>
+        <button className="button1 hover:animate-pulse" onClick={onClose}>
           x
         </button>
       </div>

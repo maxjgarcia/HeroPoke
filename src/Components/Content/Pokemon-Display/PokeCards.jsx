@@ -1,6 +1,6 @@
 import { typeColors } from "../../../Data/CardColors";
 
-const PokeCards = ({ pokemon }) => {
+const PokeCards = ({ pokemon, onClick }) => {
   const primaryType = pokemon.type[0];
 
   const colorClass = typeColors[primaryType] || "transparent";
@@ -9,11 +9,12 @@ const PokeCards = ({ pokemon }) => {
     <>
       <div className="flex justify-center items-center ">
         <div
-          className={`block rounded-xl w-72 mt-12 border-8 border-yellow-400/90 hover:border-slate-100 shadow-xl ${colorClass}/70 cursor-pointer text-black animate-slide-in-bottom `}
+          className={`block hover:scale-110 transition-transform duration-200 rounded-xl w-72 mt-12 border-8 border-yellow-400/90 hover:shadow-2xl hover:shadow-slate-500 ${colorClass}/70 cursor-pointer text-black animate-slide-in-bottom hover:border-slate-50`}
+          onClick={() => onClick(pokemon.name)}
         >
           <div className="relative overflow-hidden ">
             <img
-              className="r sm:m-h-64 md:h-64 w-full object-cover pb-1 b"
+              className="sm:m-h-64 md:h-64 w-full object-cover pb-1 b"
               src={pokemon.image}
               alt=""
             />
