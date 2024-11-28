@@ -5,6 +5,7 @@ const URL_API = `https://pokeapi.co/api/v2/pokemon?limit=151&offset=0`;
 const useFetchPokemons = () => {
   const [pokemons, setPokemons] = useState([]);
   const [types, setTypes] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   const fetchPokemons = async () => {
     try {
@@ -40,6 +41,8 @@ const useFetchPokemons = () => {
       setTypes(types);
     } catch (error) {
       console.error("Error fetching Pokémon:", error);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -47,7 +50,7 @@ const useFetchPokemons = () => {
     fetchPokemons();
   }, []);
 
-  return { pokemons, types };
+  return { pokemons, types, loading };
 };
 
 export default useFetchPokemons;

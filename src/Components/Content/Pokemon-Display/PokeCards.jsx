@@ -9,7 +9,7 @@ const PokeCards = ({ pokemon, onClick }) => {
     <>
       <div className="flex justify-center items-center ">
         <div
-          className={`block hover:scale-110 transition-transform duration-200 rounded-xl w-72 mt-12 border-8 border-yellow-400/90 hover:shadow-2xl hover:shadow-slate-500 ${colorClass}/70 cursor-pointer text-black animate-slide-in-bottom hover:border-slate-50`}
+          className={`card2 block rounded-xl w-72 mt-12  border-8 border-yellow-400/90 shadow-sm shadow-yellow-300 hover:shadow-md hover:shadow-slate-100 ${colorClass}/70 cursor-pointer text-black  hover:border-slate-100`}
           onClick={() => onClick(pokemon.name)}
         >
           <div className="relative overflow-hidden ">
@@ -20,7 +20,7 @@ const PokeCards = ({ pokemon, onClick }) => {
             />
           </div>
 
-          <div className={`py-6 text-center `}>
+          <div className="py-6 text-center">
             <h5 className="mb-2 text-2xl font-bold leading-tight  first-letter:uppercase text-center">
               {pokemon.name}
             </h5>

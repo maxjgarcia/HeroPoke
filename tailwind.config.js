@@ -15,6 +15,10 @@ export default {
           "2xl": "6rem",
         },
       },
+      backgroundImage: {
+        'custom-gradient': 'linear-gradient(to right, #6366f1, #a855f7, #DB5CAC)',
+      }
+
     },
   },
   plugins: [animations,
@@ -28,7 +32,8 @@ export default {
         '.hover\\:border-gradient:hover': {
           'border-image': 'linear-gradient(to right, #6366f1, #a855f7, #ec4899) 1',
           'border-radius': '20px',
-        },
+        }
+
       })
     },],
 }

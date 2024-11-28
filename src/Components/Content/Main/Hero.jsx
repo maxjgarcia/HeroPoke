@@ -1,6 +1,6 @@
 import { AnimatePresence, easeInOut, easeOut, motion } from "framer-motion";
-import poke_list from "../../Data/Poke";
-import { usePokemon } from "../../context/Poke-Context";
+import poke_list from "../../../Data/Poke";
+import { usePokemon } from "../../../context/Poke-Context";
 import confetti from "canvas-confetti";
 
 const slideIn = (delay) => {

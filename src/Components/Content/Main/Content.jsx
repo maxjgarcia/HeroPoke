@@ -1,9 +1,9 @@
-import { FirstSelection, Oak } from "../../assets";
+import { FirstSelection, Oak } from "../../../assets/index";
 
 const Content = () => {
   return (
     <>
-      <section className="grid grid-cols-5 items-center justify-items-center bg-black py-6 pt-16">
+      <section className="grid grid-cols-5 items-center justify-items-center  bg-black py-6 pt-16">
         <div className="col-span-1"></div>
         <div className="flex flex-col items-center space-y-4 col-span-3">
           <img

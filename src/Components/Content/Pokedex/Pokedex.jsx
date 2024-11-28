@@ -7,6 +7,8 @@ import DetailsModal from "../../Modals/DetailsModal";
 import PokedexGrid from "./PokedexGrid";
 import HeroPokedex from "./HeroPokedex";
 
+import useToggle from "../../Hooks/useToggle";
+
 const Pokedex = () => {
   const { pokemons } = useFetchPokemons();
   const { searchTerm, filteredSuggestions, handleSearchChange, setSearchTerm } =
@@ -15,6 +17,8 @@ const Pokedex = () => {
   const [selectedPokemonName, setSelectedPokemonName] = useState(null);
   const { pokemonDetails, loading } =
     useFetchPokemonsDetails(selectedPokemonName);
+
+  const { isOpen, toggleSection } = useToggle();
 
   const handleSuggestionClick = (pokemonName) => {
     setSearchTerm(pokemonName);
@@ -36,44 +40,47 @@ const Pokedex = () => {
 
   return (
     <>
-      <HeroPokedex />
-      <div>
-        <h1>Pokémon Search</h1>
-        <input
-          type="text"
-          placeholder="Search Pokémon"
-          value={searchTerm}
-          onChange={handleSearchChange}
-        />
-
-        {filteredSuggestions.length > 0 && (
-          <ul>
-            {filteredSuggestions.map((pokemon) => (
-              <li
-                key={pokemon.name}
-                onClick={() => handleSuggestionClick(pokemon.name)}
-              >
-                {pokemon.name}
-              </li>
-            ))}
-          </ul>
-        )}
-
-        <h2>My Pokedex</h2>
-        <PokedexGrid
-          pokedex={pokedex}
-          onCardClick={handleCardClick}
-          onRemoveClick={removeFromPokedex}
-        />
-
-        {selectedPokemonName && pokemonDetails && !loading && (
-          <DetailsModal
-            onClose={closeModal}
-            pokemonDetails={pokemonDetails}
-            isOpen={!!selectedPokemonName}
+      <HeroPokedex isOpen={isOpen} toggleSection={toggleSection} />
+      {isOpen && (
+        <div className="bg-custom2 min-h-[500px] pb-2">
+          <input
+            type="text"
+            placeholder="Search Pokémon"
+            value={searchTerm}
+            onChange={handleSearchChange}
+            className="flex w-48 bg-white/50 px-3 text-black/50 placeholder-black rtl:text-right outline-none rounded-full text-sm"
           />
-        )}
-      </div>
+
+          {filteredSuggestions.length > 0 && (
+            <ul className="z-50">
+              {filteredSuggestions.map((pokemon) => (
+                <li
+                  key={pokemon.name}
+                  onClick={() => handleSuggestionClick(pokemon.name)}
+                >
+                  {pokemon.name}
+                  <img src={pokemon.image} alt="" />
+                </li>
+              ))}
+            </ul>
+          )}
+
+          <h2>My Pokedex</h2>
+          <PokedexGrid
+            pokedex={pokedex}
+            onCardClick={handleCardClick}
+            onRemoveClick={removeFromPokedex}
+          />
+
+          {selectedPokemonName && pokemonDetails && !loading && (
+            <DetailsModal
+              onClose={closeModal}
+              pokemonDetails={pokemonDetails}
+              isOpen={!!selectedPokemonName}
+            />
+          )}
+        </div>
+      )}
     </>
   );
 };

@@ -1,41 +1,39 @@
+import { iconDetails, iconTrash } from "../../../assets/index";
+
 const PokedexGrid = ({ pokedex, onCardClick, onRemoveClick }) => (
-  <div
-    style={{
-      display: "grid",
-      gridTemplateColumns: "repeat(auto-fill, minmax(150px, 1fr))",
-      gap: "10px",
-    }}
-  >
+  <div className="pokedex-grid animate-blurred-fade-in p-12">
     {pokedex.map((pokemon) => (
       <div
         key={pokemon.name}
-        style={{
-          border: "1px solid #ccc",
-          padding: "10px",
-          textAlign: "center",
-        }}
+        className="border border-gray-300 text-center relative overflow-hidden rounded-lg transition-transform duration-300 ease-in-out bg-gradient-to-br from-pink-300/70 via-pink-100/70 to-pink-300/70 group"
       >
-        <h3>{pokemon.name}</h3>
         <img
           src={pokemon.image}
           alt={pokemon.name}
-          style={{ width: "100px", height: "100px" }}
+          className="w-full h-auto rounded-lg"
         />
 
-        <div className="space-x-3">
-          <button
-            className="w-8 bg-green-300"
-            onClick={() => onCardClick(pokemon.name)}
-          >
-            Details
-          </button>
+        <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white rounded-b-lg p-1 ">
+          {/* Pokémon Name: Visible by default */}
 
-          <button
-            className="w-8 bg-red-300"
-            onClick={() => onRemoveClick(pokemon.name)}
-          >
-            Remove
-          </button>
+          <h1 className="text-lg font-base p-[3px] group-hover:hidden absolute bottom-0 left-0 right-0 transition-opacity duration-700 first-letter:uppercase">
+            {pokemon.name}
+          </h1>
+          {/* Buttons: Hidden by default and shown on hover */}
+          <div className="flex justify-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-700 ">
+            <button
+              className="w-8 bg-green-600 rounded"
+              onClick={() => onCardClick(pokemon.name)}
+            >
+              <img src={iconDetails} className="w-5 h-5 mx-[6px]" />
+            </button>
+            <button
+              className="w-8 bg-red-500 rounded"
+              onClick={() => onRemoveClick(pokemon.name)}
+            >
+              <img src={iconTrash} className="w-5 h-5 mx-[6px]" />
+            </button>
+          </div>
         </div>
       </div>
     ))}

@@ -32,3 +32,30 @@
   cursor: pointer;
   text-align: center;
 }
+
+.pokedex-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 10px;
+  min-width: 300px;
+  min-height: 130px;
+}
+
+.bg-custom {
+  background-image: url("../src/assets/bgs/bg5.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.bg-custom2 {
+  background-image: url("../src/assets/bgs/bg2.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.text-with-backdrop {
+  color: white; /* Text color */
+  text-shadow: 2px 3px 10px rgba(0, 0, 0, 1); /* Creates the backdrop */
+}

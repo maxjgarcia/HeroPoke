@@ -1,7 +1,7 @@
 const DetailsModal = ({ onClose, pokemonDetails, isOpen }) => {
   return (
     <div className="modal ">
-      <div className="modal-content animate-fade-in border-gradient">
+      <div className="modal-content animate-fade-in border-gradient pd">
         <div className="flex items-center justify-between mb-4 px-4">
           <h2 className="text-xl font-bold first-letter:uppercase">
             {pokemonDetails.name}

@@ -14,11 +14,11 @@ const Navbar = () => {
             <NavLink to="/" className={linkClass}>
               Home
             </NavLink>
-            <NavLink to="/pokemons" className={linkClass}>
-              Pokémons
-            </NavLink>
             <NavLink to="/pokedex" className={linkClass}>
               Pokédex
+            </NavLink>
+            <NavLink to="/pokemons" className={linkClass}>
+              Pokémons
             </NavLink>
           </div>
         </nav>

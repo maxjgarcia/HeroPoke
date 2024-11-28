@@ -1,8 +1,8 @@
 import { Outlet } from "react-router-dom";
 import { PokemonProvider } from "../../context/Poke-Context";
-import Content from "../Content/Content";
+import Content from "../Content/Main/Content";
 import Footer from "../Footer/Footer";
-import Hero from "../Hero/Hero";
+import Hero from "../Content/Main/Hero";
 import Navbar from "../Navbar/Navbar";
 import Selection from "../Modals/Selection";
 
