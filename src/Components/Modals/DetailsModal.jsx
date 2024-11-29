@@ -1,4 +1,8 @@
+import { usePokedexContext } from "../../context/Pokedex-Context";
+
 const DetailsModal = ({ onClose, pokemonDetails, isOpen }) => {
+  // const { pokemonDetails, closeModal } = usePokedexContext();
+
   return (
     <div className="modal ">
       <div className="modal-content animate-fade-in border-gradient pd">

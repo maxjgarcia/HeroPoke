@@ -5,6 +5,8 @@ import Footer from "../Footer/Footer";
 import Hero from "../Content/Main/Hero";
 import Navbar from "../Navbar/Navbar";
 import Selection from "../Modals/Selection";
+import { PokedexProvider } from "../../context/Pokedex-Context";
+import Pokedex from "../Content/Pokedex/Pokedex";
 
 export const MainLayout = () => {
   return (
@@ -26,6 +28,16 @@ export const Home = () => {
         <Selection />
       </PokemonProvider>
       <Content />
+    </>
+  );
+};
+
+export const PokedexPage = () => {
+  return (
+    <>
+      <PokedexProvider>
+        <Pokedex />
+      </PokedexProvider>
     </>
   );
 };

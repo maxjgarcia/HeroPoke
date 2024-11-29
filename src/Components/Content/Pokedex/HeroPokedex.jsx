@@ -21,28 +21,28 @@ const slideIn = (delay) => {
 
 const HeroPokedex = ({ isOpen, toggleSection }) => {
   return (
-    <section className="bg-gradient-to-b from-[#0672b6] via-[#308cc2] to-[#79C9F9]">
-      <div className="container grid lg:grid-cols-2 min-h-[600px] md:grid-cols-1 space-x-8 bg-transparent pt-16">
+    <section className="bg-gradient-to-b from-[#0672b6] via-[#308cc2] to-[#79C9F9] pb-10 lg:pb-0">
+      <div className="container grid lg:grid-cols-2 min-h-[600px] md:grid-cols-1 space-x-2 bg-transparent pt-16">
         <motion.div
           initial={{ opacity: 0.01, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{
             duration: 1,
-            delay: 0.5,
+            delay: 0.8,
             ease: [0.1, 0.71, 0.2, 1.01],
           }}
         >
-          <img src={pokedex2} alt="image of Pokedex" className="px-8" />
+          <img src={pokedex2} alt="image of Pokedex" className="px-10" />
         </motion.div>
 
-        <div className="space-y-8 pt-6">
+        <div className="space-y-8 pt-6 flex flex-col items-center">
           <AnimatePresence>
             <motion.h1
               variants={slideIn(0.8)}
               initial="hidden"
               animate="show"
               exit="exit"
-              className="text-white justify-center text-bold text-[4rem] text-with-backdrop"
+              className="text-white text-center text-bold text-[4rem] text-with-backdrop"
             >
               Gotta catch em&apos; all
             </motion.h1>
@@ -51,11 +51,11 @@ const HeroPokedex = ({ isOpen, toggleSection }) => {
               initial="hidden"
               animate="show"
               exit="exit"
-              className="text-white justify-center text-3xl text-with-backdrop pb-12"
+              className="text-white text-3xl text-center text-with-backdrop pb-12"
             >
               &ldquo;Start Your Pokémon Journey! <br />
-              Create your own Pokédex and record every Pokémon you
-              encounter!&rdquo;
+              Create your own Pokédex, <br /> record every Pokémon you
+              find!&rdquo;
             </motion.p>
           </AnimatePresence>
           <motion.button

@@ -1,5 +1,5 @@
 import PokeDisplay from "./Components/Content/Pokemon-Display/PokeDisplay";
-import Pokedex from "./Components/Content/Pokedex/Pokedex";
+
 import {
   Route,
   createBrowserRouter,
@@ -7,7 +7,10 @@ import {
   RouterProvider,
 } from "react-router-dom";
 
-import { MainLayout, Home } from "./Components/Layouts/MainLayout";
+import { MainLayout, Home, PokedexPage } from "./Components/Layouts/MainLayout";
+
+import { PokemonProvider } from "./context/Poke-Context";
+import { PokedexProvider } from "./context/Pokedex-Context";
 
 const App = () => {
   const router = createBrowserRouter(
@@ -15,11 +18,17 @@ const App = () => {
       <Route path="/" element={<MainLayout />}>
         <Route index element={<Home />} />
         <Route path="/pokemons" element={<PokeDisplay />} />
-        <Route path="/pokedex" element={<Pokedex />} />
+        <Route path="/pokedex" element={<PokedexPage />} />
       </Route>
     )
   );
-  return <RouterProvider router={router} />;
+  return (
+    <PokemonProvider>
+      <PokedexProvider>
+        <RouterProvider router={router} />
+      </PokedexProvider>
+    </PokemonProvider>
+  );
 };
 
 export default App;

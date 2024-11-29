@@ -3,7 +3,7 @@ import { useDebounce } from "use-debounce";
 
 const usePokemonSearch = (pokemons) => {
     const [searchTerm, setSearchTerm] = useState("");
-    const [debouncedText] = useDebounce(searchTerm, 500);
+    const [debouncedText] = useDebounce(searchTerm, 700);
     const [filteredSuggestions, setFilteredSuggestions] = useState([]);
 
     useEffect(() => {
