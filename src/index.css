@@ -56,6 +56,6 @@
 }
 
 .text-with-backdrop {
-  color: white; /* Text color */
-  text-shadow: 2px 3px 10px rgba(0, 0, 0, 1); /* Creates the backdrop */
+  color: white;
+  text-shadow: 2px 3px 10px rgba(0, 0, 0, 1);
 }

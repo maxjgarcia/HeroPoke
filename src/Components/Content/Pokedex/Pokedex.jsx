@@ -6,13 +6,19 @@ import useFetchPokemonsDetails from "../../Hooks/useFetchPokemonsDetails";
 import DetailsModal from "../../Modals/DetailsModal";
 import PokedexGrid from "./PokedexGrid";
 import HeroPokedex from "./HeroPokedex";
-
 import useToggle from "../../Hooks/useToggle";
+import PokeFilter from "./PokeFilter";
 
 const Pokedex = () => {
   const { pokemons } = useFetchPokemons();
-  const { searchTerm, filteredSuggestions, handleSearchChange, setSearchTerm } =
-    usePokemonSearch(pokemons);
+  const {
+    searchTerm,
+    filteredSuggestions,
+    handleSearchChange,
+    setSearchTerm,
+    setFilteredSuggestions,
+    resetSearch,
+  } = usePokemonSearch(pokemons);
   const { pokedex, addToPokedex, removeFromPokedex } = usePokedex();
   const [selectedPokemonName, setSelectedPokemonName] = useState(null);
   const { pokemonDetails, loading } =
@@ -22,11 +28,13 @@ const Pokedex = () => {
 
   const handleSuggestionClick = (pokemonName) => {
     setSearchTerm(pokemonName);
+    setFilteredSuggestions([]);
     const selected = pokemons.find(
       (pokemon) => pokemon.name.toLowerCase() === pokemonName.toLowerCase()
     );
     if (selected) {
       addToPokedex(selected);
+      resetSearch();
     }
   };
 
@@ -43,29 +51,16 @@ const Pokedex = () => {
       <HeroPokedex isOpen={isOpen} toggleSection={toggleSection} />
       {isOpen && (
         <div className="bg-custom2 min-h-[500px] pb-2">
-          <input
-            type="text"
-            placeholder="Search Pokémon"
-            value={searchTerm}
-            onChange={handleSearchChange}
-            className="flex w-48 bg-white/50 px-3 text-black/50 placeholder-black rtl:text-right outline-none rounded-full text-sm"
+          <PokeFilter
+            handleSuggestionClick={handleSuggestionClick}
+            searchTerm={searchTerm}
+            filteredSuggestions={filteredSuggestions}
+            handleSearchChange={handleSearchChange}
           />
 
-          {filteredSuggestions.length > 0 && (
-            <ul className="z-50">
-              {filteredSuggestions.map((pokemon) => (
-                <li
-                  key={pokemon.name}
-                  onClick={() => handleSuggestionClick(pokemon.name)}
-                >
-                  {pokemon.name}
-                  <img src={pokemon.image} alt="" />
-                </li>
-              ))}
-            </ul>
-          )}
-
-          <h2>My Pokedex</h2>
+          <h2 className="px-12 mt-8 text-with-backdrop font-semibold ">
+            My Pokedex
+          </h2>
           <PokedexGrid
             pokedex={pokedex}
             onCardClick={handleCardClick}

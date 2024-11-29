@@ -16,6 +16,7 @@ const usePokemonSearch = (pokemons) => {
             pokemon.name.toLowerCase().includes(debouncedText.toLowerCase())
         );
         setFilteredSuggestions(filtered);
+
     }, [debouncedText, pokemons]);
 
     const handleSearchChange = (e) => {
@@ -23,7 +24,12 @@ const usePokemonSearch = (pokemons) => {
         setSearchTerm(input);
     };
 
-    return { searchTerm, debouncedText, filteredSuggestions, handleSearchChange, setSearchTerm };
+    const resetSearch = () => {
+        setSearchTerm("");
+        setFilteredSuggestions([]);
+    };
+
+    return { searchTerm, debouncedText, filteredSuggestions, handleSearchChange, setSearchTerm, setFilteredSuggestions, resetSearch };
 };
 
 export default usePokemonSearch;
