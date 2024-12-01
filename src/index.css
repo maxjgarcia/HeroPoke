@@ -23,16 +23,6 @@
   width: 100%;
 }
 
-.button1 {
-  background-color: #f44336;
-  color: white;
-  border: none;
-  width: 20px;
-  border-radius: 4px;
-  cursor: pointer;
-  text-align: center;
-}
-
 .pokedex-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
@@ -42,20 +32,19 @@
 }
 
 .bg-custom {
-  background-image: url("../src/assets/bgs/bg5.jpg");
+  background-image: url("../src/assets/bg5.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
 }
 
 .bg-custom2 {
-  background-image: url("../src/assets/bgs/bg2.png");
+  background-image: url("../src/assets/bg2.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
 }
 
 .text-with-backdrop {
-  color: white;
   text-shadow: 2px 3px 10px rgba(0, 0, 0, 1);
 }

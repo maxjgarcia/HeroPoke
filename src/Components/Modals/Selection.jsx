@@ -16,7 +16,7 @@ const Selection = () => {
             </button>
 
             <div className="flex flex-col items-center space-y-5">
-              <h2 className="text-center text-3xl text-nowrap font-bold text-white py-6">
+              <h2 className="text-center text-3xl  font-bold text-white py-6">
                 Congratulations, you chose{" "}
                 <span style={{ color: activePoke.bgColor }}>
                   {activePoke.name}

@@ -20,10 +20,13 @@ export { default as SGif } from './squigif.gif'
 export { default as BGif } from './bulbgif.gif'
 export { default as CGif } from './chargif.gif'
 
-export { default as pokedex1 } from './pokedex1.png'
+
 export { default as pokedex2 } from './pokedex2.png'
-export { default as pokedex3 } from './pokedex3.png'
+
 
 export { default as iconTrash } from './bx-trash.svg'
 export { default as iconDetails } from './bx-detail.svg'
+
+
+
 

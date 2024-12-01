@@ -87,7 +87,7 @@ const Hero = () => {
                   .map((item) => (
                     <div
                       key={item.id}
-                      className="grid grid-cols-1 place-items-center cursor-pointer hover:scale-110 transition-all duration-100"
+                      className="grid grid-cols-1 place-items-center cursor-pointer hover:animate-pop transition-all duration-100"
                       onClick={() => handleActivePoke(item)}
                     >
                       <img

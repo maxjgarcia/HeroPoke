@@ -8,7 +8,7 @@ const slideIn = (delay) => {
       opacity: 1,
       y: 0,
       scale: 1,
-      transition: { duration: 0.6, delay: delay, ease: easeInOut },
+      transition: { duration: 0.4, delay: delay, ease: easeInOut },
     },
     exit: {
       opacity: 0,
@@ -27,8 +27,8 @@ const HeroPokedex = ({ isOpen, toggleSection }) => {
           initial={{ opacity: 0.01, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{
-            duration: 1,
-            delay: 0.8,
+            duration: 0.6,
+            delay: 0.4,
             ease: [0.1, 0.71, 0.2, 1.01],
           }}
         >
@@ -42,7 +42,7 @@ const HeroPokedex = ({ isOpen, toggleSection }) => {
               initial="hidden"
               animate="show"
               exit="exit"
-              className="text-white text-center text-bold text-[4rem] text-with-backdrop"
+              className="text-white text-center text-bold text-5xl  lg:text-6xl text-with-backdrop"
             >
               Gotta catch em&apos; all
             </motion.h1>
@@ -51,7 +51,7 @@ const HeroPokedex = ({ isOpen, toggleSection }) => {
               initial="hidden"
               animate="show"
               exit="exit"
-              className="text-white text-3xl text-center text-with-backdrop pb-12"
+              className="text-white text-2xl lg:text-3xl text-center text-with-backdrop pb-12"
             >
               &ldquo;Start Your Pokémon Journey! <br />
               Create your own Pokédex, <br /> record every Pokémon you
@@ -59,7 +59,9 @@ const HeroPokedex = ({ isOpen, toggleSection }) => {
             </motion.p>
           </AnimatePresence>
           <motion.button
-            className="px-12 py-6 inline-block font-bold rounded-full bg-red-500 text-slate-100 border border-white/70 hover:scale-105 transition-all duration-300 hover:bg-white/70 hover:text-black hover:border hover:border-black/30"
+            className={`px-12 py-6  font-bold rounded-full text-slate-100 border border-white/70 hover:scale-105 transition-all duration-300 hover:bg-white/70 hover:text-black hover:border hover:border-black/30 ${
+              isOpen ? "bg-red-500" : "animate-pulse bg-custom-gradient"
+            } `}
             onClick={toggleSection}
             initial={{ opacity: 0, filter: "blur(10px)" }}
             animate={{ opacity: 1, filter: "blur(0)" }}
