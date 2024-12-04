@@ -44,7 +44,7 @@ const HeroPokedex = ({ isOpen, toggleSection }) => {
               exit="exit"
               className="text-white text-center text-bold text-5xl  lg:text-6xl text-with-backdrop"
             >
-              Gotta catch em&apos; all
+              Gotta catch &apos;em all
             </motion.h1>
             <motion.p
               variants={slideIn(1)}
