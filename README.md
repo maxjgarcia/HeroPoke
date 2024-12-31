@@ -9,6 +9,7 @@ A responsive web app built with React that allows users to choose their starter 
 - Pokédex Tracker: View and manage the Pokémon you've caught. Keep track of their details such as type, stats, and abilities.
 - Data Fetching from API: Information about the Pokémon is dynamically fetched from a public Pokémon API, ensuring up-to-date details for each Pokémon.
 - React Context for Global State: A Context API implementation is used to manage global states like the user's selected starter Pokémon and caught Pokémon.
+- Custom Filters: Filter Pokémon by type, stats, and other criteria to quickly find the Pokémon you're looking for. This allows for a more tailored and efficient browsing experience.
 - Data Storage with React Hooks: Custom React hooks are used for state management and data storage within the app (such as the Pokédex).
 - TailwindCSS Styling: The app is styled using TailwindCSS for rapid, responsive, and clean UI design.
 - Animations: Smooth animations are applied to enhance user interactions and transitions between pages and elements.
