@@ -3,6 +3,8 @@ import { usePokemon } from "../../context/Poke-Context";
 const Selection = () => {
   const { isModalOpen, setIsModalOpen, activePoke } = usePokemon();
 
+  console.log("isModalOpen:", isModalOpen);
+
   return (
     <>
       {isModalOpen && (

@@ -70,6 +70,7 @@ const Hero = () => {
               <button
                 onClick={() => {
                   setIsModalOpen(true);
+
                   confetti({
                     spread: 700,
                     particleCount: 150,
