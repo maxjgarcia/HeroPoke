@@ -32,14 +32,14 @@
 }
 
 .bg-custom {
-  background-image: url("../src/assets/bg5.jpg");
+  background-image: url('../src/assets/bg5.webp');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
 }
 
 .bg-custom2 {
-  background-image: url("../src/assets/bg2.png");
+  background-image: url('../src/assets/bg2.png');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
