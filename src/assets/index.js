@@ -1,6 +1,6 @@
 
 export { default as Bulbasaur } from "./bulbasaur.png";
-export { default as Charmander } from "./charmander.png";
+export { default as Charmander } from "./Charmander.png";
 export { default as Squirtle } from "./squirtle.png";
 export { default as Pikachu } from "./pikachu.png";
 
