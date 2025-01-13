@@ -1,48 +1,46 @@
-import { useState, useEffect } from "react";
-import { useDebounce } from "use-debounce";
+import { useState, useEffect } from 'react'
+import { useDebounce } from 'use-debounce'
 
 const Filters = ({ onSearch, onTypeSelect, types }) => {
-  const [searchTerm, setSearchTerm] = useState("");
-  const [debouncedText] = useDebounce(searchTerm, 500);
-  const [selectedType, setSelectedType] = useState("");
+  const [searchTerm, setSearchTerm] = useState('')
+  const [debouncedText] = useDebounce(searchTerm, 500)
+  const [selectedType, setSelectedType] = useState('')
 
   // Handle changes in the search input
   const handleSearchChange = (e) => {
-    setSearchTerm(e.target.value); // Update search term as user types
-  };
+    setSearchTerm(e.target.value)
+  }
 
-  // Handle search term after debounce and trigger the onSearch callback
   useEffect(() => {
-    if (debouncedText !== "") {
-      onSearch(debouncedText); // Pass the debounced search term to parent component
+    if (debouncedText !== '') {
+      onSearch(debouncedText)
     } else {
-      // If debouncedText is empty, show all results
-      onSearch(""); // This triggers showing all results
+      onSearch('')
     }
-  }, [debouncedText, onSearch]); // Effect runs when debouncedText changes
+  }, [debouncedText, onSearch])
 
   // Handle type selection change
   const handleTypeChange = (e) => {
-    setSelectedType(e.target.value);
-    onTypeSelect(e.target.value);
-  };
+    setSelectedType(e.target.value)
+    onTypeSelect(e.target.value)
+  }
   return (
     <>
-      <div className="flex items-center justify-center  bg-transparent">
-        <div className="flex w-full mx-7 lg:max-w-[500px] rounded-full text-black bg-slate-200 px-2 border-2 border-white/70">
+      <div className='flex items-center justify-center  bg-transparent'>
+        <div className='flex w-full mx-7 lg:max-w-[500px] rounded-full text-black bg-slate-200 px-2 border-2 border-white/70'>
           <input
-            type="text"
+            type='text'
             value={searchTerm}
             onChange={handleSearchChange}
-            placeholder="Search by name..."
-            className="flex w-full bg-transparent px-3 text-black/50 placeholder-black rtl:text-right outline-none rounded-full text-sm"
+            placeholder='Search by name...'
+            className='flex w-full bg-transparent px-3 text-black/50 placeholder-black rtl:text-right outline-none rounded-full text-sm'
           />
           <select
             value={selectedType}
             onChange={handleTypeChange}
-            className="text-black rounded-full p-1 bg-transparent outline-none border-none text-sm "
+            className='text-black rounded-full p-1 bg-transparent outline-none border-none text-sm '
           >
-            <option value="">All</option>
+            <option value=''>All</option>
             {types.map((type) => (
               <option key={type} value={type}>
                 {type}
@@ -52,7 +50,7 @@ const Filters = ({ onSearch, onTypeSelect, types }) => {
         </div>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default Filters;
+export default Filters

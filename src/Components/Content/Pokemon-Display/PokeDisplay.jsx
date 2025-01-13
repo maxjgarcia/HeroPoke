@@ -52,7 +52,7 @@ const PokeDisplay = () => {
         ) : (
           <div
             className='grid grid-cols-1 xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols items-center pb-20 bg-transparent xl:mx-12 pt-2'
-            ref={contentRef} // Attach the scrollable content reference here
+            ref={contentRef}
           >
             {filteredPokemons.map((pokemon) => (
               <PokeCards
@@ -68,7 +68,7 @@ const PokeDisplay = () => {
         {showBackToTop && (
           <button
             className='rbow p-3 bottom-4 right-4 fixed rounded-full  bg-custom-gradient border border-black hover:scale-105 transition-all duration-300 hover:bg-white/70 hover:text-black hover:border hover:border-black/30 shadow-lg'
-            onClick={handleScrollTop} // Trigger the scroll-to-top action
+            onClick={handleScrollTop}
           >
             <svg
               xmlns='http://www.w3.org/2000/svg'
